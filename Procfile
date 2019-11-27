@@ -1,1 +1,1 @@
-web: npm run build publish package.json 
+web: npm run publish package.json
