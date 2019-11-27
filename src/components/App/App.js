@@ -11,10 +11,12 @@ class App extends React.Component {
     lists: PropTypes.array,
   }
   render() {
+    console.log(';)');
     const {title, subtitle, lists} = this.props;
     return (
       <main className={styles.component}>
         <h1 className={styles.title}>{title}</h1>
+        {console.log(';)')}
         <h2 className={styles.subtitle}>{subtitle}</h2>
         <Search />
         {lists.map(listData => (

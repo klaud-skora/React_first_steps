@@ -6,39 +6,33 @@ import {settings} from '../../data/dataStore';
 import Creator from '../Creator/Creator';
 import Icon from '../Icon';
 
-class Column extends React.Component {
-  static propTypes = {
-    title: PropTypes.string,
-    icon: PropTypes.node,
-    cards: PropTypes.array,
-    addCard: PropTypes.func,
-  }
-  static defaultProps = {
-    icon: settings.defaultColumnIcon,
-  }
+const Column = props => (
+  <section className={styles.component}>
+    <h3 className={styles.title}>
+      <span className={styles.icon}>
+        <Icon name={props.icon || defaultProps.icon}/>
+      </span>
+      {props.title}
+    </h3>
+    <div>
+      {props.cards.map(cardData => (
+        <Card key={cardData.id} {...cardData} />
 
-  render() {
-    const {title, icon, cards, addCard} = this.props;
-    return (
-      <section className={styles.component}>
-        <h3 className={styles.title}>
-          <span className={styles.icon}>
-            <Icon name={icon}/>
-          </span>
-          {title}
-        </h3>
-        <div>
-          {cards.map(cardData => (
-            <Card key={cardData.id} {...cardData} />
-
-          ))}
-        </div> 
-        <div className={styles.creator}>
-          <Creator title={settings.cardCreatorText} action={addCard}/>
-        </div>
-      </section>
-    );
-  }
-}
+      ))}
+    </div> 
+    <div className={styles.creator}>
+      <Creator title={settings.cardCreatorText} action={props.addCard}/>
+    </div>
+  </section>
+);
+Column.propTypes = {
+  title: PropTypes.string,
+  icon: PropTypes.node,
+  cards: PropTypes.array,
+  addCard: PropTypes.func,
+};
+const defaultProps = {
+  icon: settings.defaultColumnIcon,
+};
 
 export default Column;
