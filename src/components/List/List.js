@@ -6,9 +6,13 @@ import Column from '../Column/ColumnContainer';
 import {settings} from '../../data/dataStore';
 import ReactHtmlParser from 'react-html-parser';
 import Creator from '../Creator/Creator';
+import Container from '../Container/Container';
 
 const List = props => (
   <section className={styles.component}>
+    <Container>
+      <p>Kontener w List</p>
+    </Container>
     <Hero titleText={props.title} image={props.image}/>
     <div className={styles.description}>
       {ReactHtmlParser(props.description || defaultProps.description)}
