@@ -6,12 +6,39 @@ export const settings = {
     buttonCancel: 'Cancel',
     defaultText: 'Add new item',
   },
+  header: {
+    icon: 'adjust',
+  },
+  link: {
+    home: '/',
+    info: '/info',
+    faq: '/faq',
+  },
+  nav: {
+    homePage: 'Home',
+    infoPage: 'Info',
+    faqPage: 'FAQ',
+  },
   search: {
     defaultText: 'Search...',
     icon: 'search',
   },
   defaultListDescription: '<p>I can do all the things!!!</p>',
   defaultColumnIcon: 'list-alt',
+};
+
+export const faq = {
+  title: 'Welcome to the FAQ!',
+  description: 'It is a third page you can fill with anything you want',
+  image: 'https://images.pexels.com/photos/356079/pexels-photo-356079.jpeg?cs=srgb&dl=ask-blackboard-chalk-board-chalkboard-356079.jpg&fm=jpg',
+  titleText: 'Frequently asked questions',
+};
+
+export const info = {
+  title: 'There is come info to check out',
+  description: 'The to-do app contains all the task you need to complete',
+  image: 'https://images.pexels.com/photos/3299/postit-scrabble-to-do.jpg?cs=srgb&dl=agenda-blank-checklist-3299.jpg&fm=jpg',
+  imageText: 'Wrtite them down',
 };
 
 export const pageContents = {
@@ -152,6 +179,8 @@ const initialStoreData = {
   lists: [...lists],
   columns: [...columns],
   cards: [...cards],
+  info: {...info},
+  faq: {...faq},
 };
 
 export default initialStoreData;

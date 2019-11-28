@@ -11,21 +11,20 @@ import Container from '../Container/Container';
 const List = props => (
   <section className={styles.component}>
     <Container>
-      <p>Kontener w List</p>
+      <Hero titleText={props.title} image={props.image}/>
+      <div className={styles.description}>
+        {ReactHtmlParser(props.description || defaultProps.description)}
+      </div>
+      <div className={styles.columns}>
+        {props.columns.map(columnData => (
+          <Column key={columnData.id} {...columnData} />
+          
+        ))}
+      </div>
+      <div className={styles.creator}>
+        <Creator text={settings.columnCreatorText} action={props.addColumn}/>
+      </div> 
     </Container>
-    <Hero titleText={props.title} image={props.image}/>
-    <div className={styles.description}>
-      {ReactHtmlParser(props.description || defaultProps.description)}
-    </div>
-    <div className={styles.columns}>
-      {props.columns.map(columnData => (
-        <Column key={columnData.id} {...columnData} />
-        
-      ))}
-    </div>
-    <div className={styles.creator}>
-      <Creator text={settings.columnCreatorText} action={props.addColumn}/>
-    </div> 
   </section>
 );
 List.propTypes = {
