@@ -106,6 +106,18 @@ const lists = [
     description: 'Interesting things I want to check out!',
     image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
   },
+  {
+    id: 'list-2',
+    title: 'Rampampampam',
+    description: 'Do not you worry about it',
+    image: 'https://images.pexels.com/photos/2559484/pexels-photo-2559484.jpeg?cs=srgb&dl=white-cumulus-clouds-2559484.jpg&fm=jpg',
+  },
+  {
+    id: 'list-3',
+    title: 'Szibiduba',
+    description: 'Check this out, only if you want',
+    image: 'https://images.pexels.com/photos/3178786/pexels-photo-3178786.jpeg?cs=srgb&dl=close-up-photo-of-green-leaves-3178786.jpg&fm=jpg',
+  },
 ];
 
 const columns = [

@@ -2,6 +2,7 @@ import {connect} from 'react-redux';
 import Home from './Home';
 import {createAction_moveCard} from '../../redux/cardsRedux';
 
+
 const mapStateToProps = state => ({
   title: state.app.title,
   subtitle: state.app.subtitle,
