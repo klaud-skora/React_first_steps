@@ -3,12 +3,12 @@ import List from './List';
 import {getColumnsForList, createAction_addColumn} from '../../redux/columnsRedux';
 
 const mapStateToProps = (state, props) => {
-  //const id = props.match.params.id;
-  //const filteredLists = state.lists.filter(list => list.id == id);
-  //const listParams = filteredLists[0] || {};
+  const id = props.match.params.id;
+  const filteredLists = state.lists.filter(list => list.id == id);
+  const listParams = filteredLists[0] || {};
   return {
-    //...listParams,
-    columns: getColumnsForList(state, props.id),
+    ...listParams,
+    columns: getColumnsForList(state, id),
   };
 };
 
