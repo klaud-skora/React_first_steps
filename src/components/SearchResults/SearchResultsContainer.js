@@ -3,9 +3,17 @@ import SearchResults from './SearchResults';
 import {getCardsFromAllLists} from '../../redux/cardsRedux';
 import {createAction_changeSearchString} from '../../redux/searchStringRedux';
 
+/*
 const mapStateToProps = (state, props) => ({
   cards: getCardsFromAllLists(state, props.match.params.searchString),
-});
+}); */
+const mapStateToProps = (state, props) => {
+  console.log('state: ', state);
+  console.log('props: ', props);
+  return {
+    cards: getCardsFromAllLists(state, props.match.params.searchString),
+  };
+};
 
 const mapDispatchToProps = (dispatch) => ({
   changeSearchString: newSearchString => dispatch(createAction_changeSearchString(newSearchString)),
